@@ -18,26 +18,65 @@ Concise instructions for executing experiments and reproducing results.
 ## Quick Start
 
 ```bash
-# Activate environment
-conda activate hasids
+# Install dependencies
+pip install -r requirements.txt
 
 # Verify installation
 python -c "import torch, faiss, sklearn, pandas; print('Ready')"
 
+# Download and prepare datasets (see Dataset Preparation section below)
+
 # Run first experiment
-cd HAS_IDS
+cd HAS-IDS
 python has_ids_unsw.py
 ```
 
-**Dataset Structure:**
+---
+
+## Dataset Preparation
+
+**Datasets are NOT included in this repository.** You must download them separately:
+
+### 1. Download Datasets
+
+**UNSW-NB15:**
+- Official: https://research.unsw.edu.au/projects/unsw-nb15-dataset
+- Download pre-processed CSV files or raw PCAP files
+
+**CIC-IDS2017 (Corrected Version):**
+- DistriNet (Recommended): https://intrusion-detection.distrinet-research.be/WTMC2021/
+- Kaggle Mirror: https://www.kaggle.com/datasets/dhoogla/distrinetcicids2017/data
+
+### 2. Create Directory Structure
+
+Create the following structure in the project root:
 ```
 Datasets/
 ├── UNSW/
-│   ├── BUNSWTrain.csv, BUNSWTest.csv      # Binary labels
-│   └── MUNSWTrain.csv, MUNSWTest.csv      # Multiclass labels
+│   ├── BUNSWTrain.csv          # Binary training set
+│   ├── BUNSWTest.csv           # Binary test set
+│   ├── MUNSWTrain.csv          # Multiclass training set
+│   └── MUNSWTest.csv           # Multiclass test set
 └── DCIC2017/
-    ├── DBcic2017_train.csv, DBcic2017_test.csv
-    └── DMcic2017_train.csv, DMcic2017_test.csv
+    ├── DBcic2017_train.csv     # Binary training set
+    ├── DBcic2017_test.csv      # Binary test set
+    ├── DMcic2017_train.csv     # Multiclass training set
+    └── DMcic2017_test.csv      # Multiclass test set
+```
+
+### 3. Preprocess Raw Data (Optional)
+
+If you downloaded raw data, use the preprocessing scripts:
+```bash
+cd Dataset_split
+
+# For CIC-IDS2017
+python Dcicids2017.py
+
+# For general train/test split
+python split.py
+python DBsplit.py  # Binary split
+python DMsplit.py  # Multiclass split
 ```
 
 ---
@@ -46,34 +85,37 @@ Datasets/
 
 **UNSW-NB15:**
 ```bash
-cd HAS_IDS && python has_ids_unsw.py
+cd HAS-IDS
+python has_ids_unsw.py
 ```
 
 **CIC-IDS2017:**
 ```bash
-cd HAS_IDS && python has_ids_ids2017.py
+cd HAS-IDS
+python has_ids_dcic.py
 ```
 
-Output: Model checkpoint (.joblib), predictions (.csv), and metrics (.json) files.
+**Output Files:**
+- Model checkpoint: `*.joblib`
+- Predictions: `*_predictions.csv`
+- Metrics: `*_metrics.json`
 
 ---
 
 ## Baseline Methods
 
-| Method              | Command                                                 |
-|---------------------|---------------------------------------------------------|
-| **CL-BGMM**         | `cd CL-BGMM && python bgmm_unsw_bv2_fixedv2.py`        |
-| **AOC-IDS**         | `cd baselines/aocids && python run_aoc_ids_unsw.py`    |
-| **CIDS**            | `cd CIDS && python cids_unsw.py`                       |
-| **Isolation Forest**| `cd Isolation_forest && python isolation_forest_unsw.py`|
-| **Autoencoder**     | `cd autoencoder && python run_unsw_ae.py`              |
-| **OneR**            | `cd OneR && python unsw.py`                            |
-
-*For CIC-IDS2017: replace `unsw` with `dcic2017` or `cicids2017`.*
+| Method              | Command (UNSW-NB15)                                          | Command (CIC-IDS2017)                                     |
+|---------------------|--------------------------------------------------------------|-----------------------------------------------------------|
+| **CL-BGMM**         | `cd baselines/CL-BGMM && python cl_bgmm_unsw.py`             | `cd baselines/CL-BGMM && python cl_bgmm_dcic.py`          |
+| **AOC-IDS**         | `cd baselines/aocids && python run_aoc_ids_unsw.py`          | *(UNSW only)*                                             |
+| **CIDS**            | `cd baselines/CIDS && python cids_unsw.py`                   | *(UNSW only)*                                             |
+| **Isolation Forest**| `cd baselines/Isolation_forest && python isolation_forest_unsw.py` | `cd baselines/Isolation_forest && python isolation_forest_dcic.py` |
+| **Autoencoder**     | `cd baselines/autoencoder && python run_unsw_ae.py`          | `cd baselines/autoencoder && python run_dcic_ae.py`       |
 
 ---
 
 ## Ablation Studies
+
 **UNSW-NB15 Variants:**
 ```bash
 cd Ablation_Study
@@ -87,7 +129,18 @@ python has-ids_unsw_contextOnly.py               # Contextual only
 python has-ids_unsw_AnnOnly_woBgmm.py            # ANN only
 ```
 
-*For CIC-IDS2017: replace `unsw` with `cicids2017` or `ids2017`.*
+**CIC-IDS2017 Variants:**
+```bash
+cd Ablation_Study
+
+python full-has_ids_cicids2017.py                # Full model
+python has-ids_cicids2017_wo_prob.py             # Without BGMM
+python has-ids_ids2017_wo_contextualScores.py    # Without contextual scoring
+python has-ids_ids2017_wo_instanceScore.py       # Without ANN
+python has-ids_ids2017_probOnly.py               # BGMM only
+python has-ids_cicids2017_contextOnly.py         # Contextual only
+python has-ids_ids2017_AnnOnly_woBgmm.py         # ANN only
+```
 
 ---
 
