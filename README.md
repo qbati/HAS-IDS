@@ -43,11 +43,14 @@ pip install -r requirements.txt
 ```
 
 **Core Dependencies:**
-- Python ≥3.8
-- PyTorch 1.13.1
-- scikit-learn 1.2.1
+- Python 3.10
+- PyTorch 2.5.1 (GPU-accelerated)
+- scikit-learn 1.6.0
 - faiss-cpu 1.7.4 (or faiss-gpu for CUDA acceleration)
-- pandas 1.5.3, numpy 1.23.5
+- pandas, numpy
+
+**Hardware:**
+- Tested on Intel Core i7-12700H, 16GB RAM, NVIDIA RTX 3070 Ti (8GB VRAM), Windows 11
 
 ---
 
