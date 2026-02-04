@@ -14,7 +14,7 @@
 
 HAS-IDS addresses the critical challenge of detecting rare network attacks (<1% prevalence) in highly imbalanced intrusion detection datasets. The system combines symmetric supervised contrastive learning with multi-evidence anomaly scoring to achieve superior recall on low-frequency attack classes while maintaining practical false-positive rates.
 
-**Core Innovation:** A meta-classifier fuses three complementary evidence streams—BGMM-based probabilistic normality, ANN-based attack similarity, and mixture-level contextual features—into a calibrated decision framework operating under fixed FPR constraints.
+**Core Innovation:** A meta-classifier fuses three complementary evidence streams BGMM-based probabilistic normality, ANN-based attack similarity, and mixture-level contextual features into a calibrated decision framework operating under fixed FPR constraints.
 
 ---
 
