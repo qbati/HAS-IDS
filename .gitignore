@@ -1,0 +1,67 @@
+# HAS-IDS Project .gitignore
+# Network Intrusion Detection System - ML Research Repository
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual Environments
+.venv/
+env/
+venv/
+hasids_env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Models & Artifacts
+*.pth
+*.pt
+*.joblib
+*.pkl
+*.ckpt
+
+# Datasets (download separately)
+Datasets/
+*.csv
+*.npy
+*.npz
+
+# Experiment Outputs
+outputs/
+results_*/
+logs/
+*.log
+
+# Predictions & Metrics
+*_predictions.csv
+*_metrics.json
+
+# Visualizations
+*.png
+*.pdf
+plots/
+figures/
+
+# FAISS Indexes
+*.index
+*.faiss
+
+# External Dependencies
+external/
+AOC-IDS-upstream/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp Files
+*.tmp
+*.bak
+*~

@@ -1,0 +1,37 @@
+# ==============================================================================
+# HAS-IDS: Hybrid Anomaly Scoring for Low-Frequency Network Intrusion Detection
+# Python Dependencies Specification
+# ==============================================================================
+# This file specifies all required Python packages with version constraints
+# to ensure reproducible execution across different computational environments.
+# Minimum Python version: 3.8
+# ==============================================================================
+
+# Deep Learning Framework
+torch==1.13.1
+torchvision==0.14.1
+
+# Numerical Computing and Scientific Libraries
+numpy==1.23.5
+scipy==1.10.0
+
+# Data Manipulation and Analysis
+pandas==1.5.3
+
+# Machine Learning and Statistical Modeling
+scikit-learn==1.2.1
+joblib==1.2.0
+
+# Approximate Nearest Neighbor Search
+# Note: Select either CPU or GPU variant based on available hardware
+faiss-cpu==1.7.4        # CPU-only implementation
+# faiss-gpu==1.7.4      # GPU-accelerated implementation (requires CUDA toolkit)
+
+# Visualization and Plotting
+matplotlib==3.6.0
+seaborn==0.12.0
+
+# Optional Dependencies
+# The following packages enhance functionality but are not strictly required
+tqdm>=4.64.0            # Progress indication for iterative operations
+pyyaml>=6.0             # Configuration file parsing
