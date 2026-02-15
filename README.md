@@ -170,7 +170,8 @@ Comparative implementations provided in `baselines/`:
 
 ```bibtex
 @software{abdulrahman2026hasids_code,
-  author    = {Abdulrahman, Salah Abdullah Khalil and Suryani, Vera},
+  author    = {Abdulrahman, Salah Abdullah Khalil and Suryani, Vera and 
+               Ko{\l}aczek, Grzegorz},
   title     = {HAS-IDS: Hybrid Anomaly Scoring for Low-Frequency 
                Network Intrusion Detection},
   year      = {2026},
