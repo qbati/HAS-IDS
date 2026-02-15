@@ -5,8 +5,10 @@
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.5.1-red.svg)](https://pytorch.org/)
 
-**Authors:** Salah Abdullah Khalil Abdulrahman, Vera Suryani  
-**Affiliation:** School of Computing, Telkom University, Bandung 40257, Indonesia
+**Authors:** Salah Abdullah Khalil Abdulrahman¹, Vera Suryani¹, Grzegorz Kołaczek²  
+**Affiliations:**  
+¹ School of Computing, Telkom University, Bandung, West Java, Indonesia  
+² Computer Science and Systems Engineering, Wrocław University of Science and Technology, Wrocław, Lower Silesia, Poland
 
 ---
 
