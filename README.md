@@ -147,11 +147,11 @@ HAS-IDS/
 All experiments use fixed random seeds (default: 42). Hyperparameters are embedded in source files. For detailed configuration and ablation variants, consult [USAGE.md](USAGE.md).
 
 **Key Hyperparameters:**
-- Encoder: 196→128→64→32 (UNSW), 82→128→64→32 (CIC-IDS2017)
-- Contrastive temperature: τ=0.4 (UNSW), τ=0.2 (CIC-IDS2017)
-- BGMM components: K=3 (UNSW), K=4 (CIC-IDS2017)
-- ANN neighbors: k=7 (FAISS IndexFlatIP for exact search)
-- FPR budget: α=0.10 (UNSW), α=0.001 (CIC-IDS2017)
+- Encoder: 196→128→64→32 (UNSW), 82→256→128→128 (CIC-IDS2017)
+- Contrastive temperature: τ=0.38 (UNSW), τ=0.05 (CIC-IDS2017)
+- BGMM components: K=5, reg=1e-2 (UNSW); K=3, reg=4e-3 (CIC-IDS2017)
+- ANN neighbors: k=7 (all datasets)
+- FPR budget: α=0.10 (all datasets)
 
 ---
 
