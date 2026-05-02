@@ -595,7 +595,13 @@ def main():
     print(f"[Meta-Classifier] Optimal decision threshold found: {optimal_threshold:.4f}")
 
     try:
-        hcn_guard_threshold = np.quantile(meta_scores_cal[y_tr_cal == 0], 1 - HCN_GUARD_QUANTILE)
+        # UNSW-NB15 dataset-conditional guard: normal meta-scores cluster near
+        # zero on this dataset, so the lower quantile
+        # (1 - HCN_GUARD_QUANTILE = 0.005) is used. This makes the guard
+        # non-restrictive in practice, allowing flows to proceed to t_opt.
+        # See Section 4.3.4 of the manuscript for the full explanation.
+        hcn_guard_threshold = np.quantile(
+            meta_scores_cal[y_tr_cal == 0], 1 - HCN_GUARD_QUANTILE)
     except Exception:
         hcn_guard_threshold = 0.0
     print(f"[HCN Guard] High-Confidence-Normal threshold set at: {hcn_guard_threshold:.4f}")
