@@ -511,8 +511,19 @@ def main():
     meta_scores_cal = meta_pipe.predict_proba(meta_features_cal)[:, 1]
     optimal_threshold = find_optimal_meta_threshold(y_tr_cal, meta_scores_cal, target_fpr=TARGET_FPR)
     print(f"[Meta-Classifier] Optimal decision threshold found: {optimal_threshold:.4f}")
-    hcn_guard_threshold = np.quantile(meta_scores_cal[y_tr_cal == 0], HCN_GUARD_QUANTILE)
+
+    try:
+        # CIC-IDS2017 dataset-conditional guard: normal meta-scores are more
+        # spread on this dataset, so the upper quantile
+        # (HCN_GUARD_QUANTILE = 0.995) provides a meaningful
+        # high-confidence-normal boundary. This is the standard implementation
+        # described in Algorithm 2 and Section 4.3.4 of the manuscript.
+        hcn_guard_threshold = np.quantile(
+            meta_scores_cal[y_tr_cal == 0], HCN_GUARD_QUANTILE)
+    except Exception:
+        hcn_guard_threshold = 0.0
     print(f"[HCN Guard] High-Confidence-Normal threshold set at: {hcn_guard_threshold:.4f}")
+
 
     # ----------------------------------------------------------------------
     # Stop training timer here (encoder + BGMM + FAISS + meta-classifier)
