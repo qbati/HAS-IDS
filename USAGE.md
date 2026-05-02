@@ -205,4 +205,4 @@ test_path = "../Datasets/Custom/custom_test.csv"
 
 ---
 
-**Version**: 1.0.0 | **Updated**: February 4, 2026
+**Version**: 1.0.1 | **Updated**: May 2, 2026
