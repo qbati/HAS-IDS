@@ -1,6 +1,6 @@
 # HAS-IDS: Hybrid Anomaly Scoring for Low-Frequency Network Intrusion Detection
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19971396.svg)](https://doi.org/10.5281/zenodo.19971396) 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19971396.svg)](https://doi.org/10.5281/zenodo.19991302)  
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.5.1-red.svg)](https://pytorch.org/)
