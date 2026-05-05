@@ -515,7 +515,7 @@ def main():
     print(f"[Meta-Classifier] Optimal decision threshold found: {optimal_threshold:.4f}")
 
     try:
-        # CIC-IDS2017 dataset-conditional guard: normal meta-scores are more
+        # Corrected Distrinet-CIC-IDS2017 dataset-conditional guard: normal meta-scores are more
         # spread on this dataset, so the upper quantile
         # (HCN_GUARD_QUANTILE = 0.995) provides a meaningful
         # high-confidence-normal boundary. This is the standard implementation
