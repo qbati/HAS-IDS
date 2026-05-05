@@ -1,5 +1,6 @@
 # HAS-IDS: Hybrid Anomaly Scoring for Low-Frequency Network Intrusion Detection
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20032288.svg)](https://doi.org/10.5281/zenodo.20032288)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.5.1-red.svg)](https://pytorch.org/)
@@ -335,8 +336,9 @@ Temporary pre-Zenodo `v1.0.3` citation:
                Network Intrusion Detection},
   year      = {2026},
   publisher = {Zenodo},
-  version   = {v1.0.3},
-  url       = {https://github.com/qbati/HAS-IDS}
+  version   = {1.0.3},
+  doi       = {10.5281/zenodo.20032288},
+  url       = {https://doi.org/10.5281/zenodo.20032288}
 }
 ```
 
