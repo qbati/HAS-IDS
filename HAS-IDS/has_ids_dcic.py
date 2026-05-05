@@ -316,9 +316,11 @@ def ann_attack_score(query_vecs: np.ndarray, index, k: int = 7, fallback_bank: n
 
 # ----------------------- Threshold Finder -----------------------
 def find_optimal_meta_threshold(y_true, scores, target_fpr=None):
-    thresholds = np.unique(np.round(scores, 4))
-    # also allow threshold just above max score -> FPR = 0
-    thresholds = np.concatenate([thresholds, [thresholds.max() + 1e-6]])
+    # Use observed calibration scores directly to avoid rounding-induced
+    # degenerate thresholds in saturated CIC-IDS2017 runs.
+    scores = np.asarray(scores, dtype=np.float64)
+    thresholds = np.unique(scores)
+    thresholds = np.concatenate([thresholds, [np.nextafter(thresholds.max(), np.inf)]])
 
     if target_fpr is None:
         # pure max-F1
