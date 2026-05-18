@@ -1,4 +1,4 @@
-# HAS-IDS: Hybrid Anomaly Scoring for Low-Frequency Network Intrusion Detection
+# HAS-IDS: Hybrid Anomaly-Scoring Intrusion Detection System for Low-Frequency Network Attacks
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20032288.svg)](https://doi.org/10.5281/zenodo.20032288)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
