@@ -5,10 +5,7 @@
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.5.1-red.svg)](https://pytorch.org/)
 
-**Authors:** Salah Abdullah Khalil Abdulrahman¹, Vera Suryani¹, Grzegorz Kołaczek²  
-**Affiliations:**  
-¹ School of Computing, Telkom University, Bandung, West Java, Indonesia  
-² Computer Science and Systems Engineering, Wrocław University of Science and Technology, Wrocław, Lower Silesia, Poland
+
 
 ---
 
@@ -322,38 +319,6 @@ Some baselines are dataset-specific. Check the script names and folder-level com
 
 ---
 
-## Citation
-
-Use [CITATION.bib](CITATION.bib) for citation metadata.
-
-Temporary pre-Zenodo `v1.0.3` citation:
-
-```bibtex
-@software{abdulrahman2026hasids_code,
-  author    = {Abdulrahman, Salah Abdullah Khalil and Suryani, Vera and
-               Ko{\l}aczek, Grzegorz},
-  title     = {{HAS-IDS}: Hybrid Anomaly Scoring for Low-Frequency
-               Network Intrusion Detection},
-  year      = {2026},
-  publisher = {Zenodo},
-  version   = {1.0.3},
-  doi       = {10.5281/zenodo.20032288},
-  url       = {https://doi.org/10.5281/zenodo.20032288}
-}
-```
-
-After the Zenodo `v1.0.3` archive is published, update this section with the final DOI.
-
----
-
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## Contact
-
-**Salah Abdullah Khalil Abdulrahman**  
-School of Computing, Telkom University  
-Email: salahabdullahkhalil@student.telkomuniversity.ac.id
